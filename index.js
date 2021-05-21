@@ -10,8 +10,8 @@ import household from './routes/household.js'
 import business from './routes/business.js'
 import certificate from './routes/certificate.js'
 
-// const CONNECTION_URL = `mongodb+srv://elrazinmjo:elrazinmjo@cluster0.ihq4j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
-const CONNECTION_URL = 'mongodb://localhost/stamaria';
+const CONNECTION_URL = `mongodb+srv://elrazinmjo:elrazinmjo@cluster0.ihq4j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+// const CONNECTION_URL = 'mongodb://localhost/stamaria';
 
 let server;
 
