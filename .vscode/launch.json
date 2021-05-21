@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Current TS Tests File",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/mocha/bin/mocha",
+      "args": [
+        "--async-stack-traces",
+        // "--no-timeouts",
+        "${relativeFile}"
+      ],
+      "cwd": "${workspaceRoot}/",
+      "protocol": "inspector",
+      "env": {
+        "NODE_ENV": "testing",
+        "DEBUG": "error*,warn*,info*"
+      }
+    }
+  ]
+}
