@@ -37,7 +37,7 @@ export const createBusiness = async (req, res) => {
 
     res.status(201).json(newBusiness)
   } catch (error) {
-    res.status(404).json({ message: erros.message })
+    res.status(404).json({ message: error.message })
   }
 }
 

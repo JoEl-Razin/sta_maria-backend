@@ -1,6 +1,7 @@
 import express from 'express'
 
 import {
+  getResident,
   getResidents,
   createResident,
   updateResident,
@@ -9,6 +10,7 @@ import {
 
 const router = express.Router()
 
+router.get('/:id', getResident)
 router.get('/', getResidents)
 router.post('/', createResident)
 router.patch('/:id', updateResident)

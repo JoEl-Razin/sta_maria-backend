@@ -6,20 +6,23 @@ const residentSchema = mongoose.Schema({
     lastName: String,
     middleInitial: String,
   },
-  sex: ['Female', 'Male'],
+  sex: String,
   civilStatus: String,
+  religion: String,
   address: {
     householdNo: String,
     streetName: String,
-  },                                              // FIX TEST SAMPLES!!!!!
+  },
   precintNumber: String,
   birthday: Date,
   birthplace: String,
   profession: String,
   nationality: String,
-  residentType: ['Voter', 'Non-Voter'],
-  living: Boolean,
-  blacklist: Boolean,
+  residentType: String,
+  blacklist: {
+    blacklisted: String,
+    details: String,
+  }
 });
 
 const Resident = mongoose.model('Resident', residentSchema)

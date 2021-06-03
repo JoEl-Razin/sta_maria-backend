@@ -2,23 +2,12 @@ import mongoose from 'mongoose'
 
 const certificateSchema = mongoose.Schema({
   controlNo: Number,
-  certificateType: [
-    'Barangay Clearance', 
-    'Business Clearance', 
-    'Certificate of Good moral', 
-    'Certificate of good moral'
-  ],
+  certificateType: String,
   name: String,
   address: String,
-  certificatePurpose: [
-    'Police Clearance',
-    'NBI Clearance',
-    'BIR(TIN)',
-    'Employment',
-    'School Purpose',
-    'Others'
-  ],
-  sex: ['Male', 'Female']
+  certificatePurpose: String,
+  sex: String,
+  date: String,
 });
 
 const Certificate = mongoose.model('certificate', certificateSchema)

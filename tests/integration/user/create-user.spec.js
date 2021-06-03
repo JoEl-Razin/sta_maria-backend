@@ -7,12 +7,12 @@ describe('Create User', async function () {
   describe('WHEN required input values are provided', async function () {
     it('SHOULD create an user successfully', async function () {
       const input = {
-        username: chance.email(),
-        password: chance.string({ length: 8 }),
+        username: "elrazinmjo@gmail.com",//chance.email(),
+        password: "elrazinmjo@gmail.com",//chance.string({ length: 8 }),
         name: {
-          firstName: chance.first(),
-          lastName: chance.last(),
-          middleInitial: chance.word().slice(0, 1).toUpperCase(),
+          firstName: "El-Razin", //chance.first(),
+          lastName: "Jo", //chance.last(),
+          middleInitial: "M", //chance.word().slice(0, 1).toUpperCase(),
         },
         roles: ['Admin'],
       };
@@ -20,7 +20,7 @@ describe('Create User', async function () {
       const server = supertest(this.server);
 
       await server
-        .post('/users')
+        .post('/user')
         .send(input)
         .set('Accept', 'application/json')
         .expect(201)

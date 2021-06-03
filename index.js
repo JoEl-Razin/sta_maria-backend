@@ -9,9 +9,11 @@ import resident from './routes/resident.js'
 import household from './routes/household.js'
 import business from './routes/business.js'
 import certificate from './routes/certificate.js'
+import login from './routes/login.js'
+import about from './routes/home-about.js'
 
-const CONNECTION_URL = `mongodb+srv://elrazinmjo:elrazinmjo@cluster0.ihq4j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
-// const CONNECTION_URL = 'mongodb://localhost/stamaria';
+// const CONNECTION_URL = `mongodb+srv://elrazinmjo:elrazinmjo@cluster0.ihq4j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+const CONNECTION_URL = 'mongodb://localhost/stamaria';
 
 let server;
 
@@ -26,11 +28,13 @@ export async function start(port) {
   app.use(cors());
 
   // user routes
-  app.use('/users', user);
+  app.use('/user', user);
   app.use('/resident', resident)
   app.use('/household', household)
   app.use('/business', business)
   app.use('/certificate', certificate)
+  app.use('/login', login)
+  app.use('/home-about', about)
 
   await mongoose.start(CONNECTION_URL);
 

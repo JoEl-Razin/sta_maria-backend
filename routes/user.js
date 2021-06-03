@@ -1,4 +1,5 @@
 import express from 'express';
+import authMiddleware from '../middleware/auth.js';
 
 import { 
   getUser, 
@@ -10,7 +11,10 @@ import {
 
 const router = express.Router()
 
-// router.get('/', getUser)
+// Authorization: Bearer JWT_TOKEN
+// router.use(authMiddleware);
+
+// router.get('/:id', getUser)
 router.get('/', getUsers)
 router.post('/', createUser)
 router.patch('/:id', updateUser)
