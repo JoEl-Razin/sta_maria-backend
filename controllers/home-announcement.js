@@ -67,3 +67,5 @@ export const deleteAnnouncement = async (req, res) => {
 
   res.json({ message: 'Deleted Successfully' })
 }
+
+export default router
