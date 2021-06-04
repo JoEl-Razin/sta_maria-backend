@@ -30,28 +30,28 @@ export const getReqCertificates = async (req, res) => {
 export const createReqCertificate = async (req, res) => {
   const {
     controlNo,
-    type,
     name,
     address,
-    purpose,
     sex,
+    type,
+    purpose,
     date
   } = req.body
 
-  const newAbout = new ReqCertificate({
+  const newReqCert = new ReqCertificate({
     controlNo,
-    type,
     name,
     address,
-    purpose,
     sex,
+    type,
+    purpose,
     date
   })
 
   try {
-    await newAbout.save()
+    await newReqCert.save()
 
-    res.status(201).json(newAbout)
+    res.status(201).json(newReqCert)
   } catch (error) {
     res.status(404).json({ message: error.message })
   }
@@ -59,23 +59,31 @@ export const createReqCertificate = async (req, res) => {
 
 export const updateReqCertificate = async (req, res) => {
   const { id: _id } = req.params
-  const { about } = req.body
+  const {
+    controlNo,
+    name,
+    address,
+    sex,
+    type,
+    purpose,
+    date
+  } = req.body
 
   if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No post with that id: ${id}`)
 
-  const updatedAbout = {
+  const updatedReqCert = {
     controlNo,
-    type,
     name,
     address,
-    purpose,
     sex,
+    type,
+    purpose,
     date
   }
 
   await ReqCertificate.findByIdAndUpdate(id, updatedAbout, { new: true })
 
-  res.json(updatedAbout)
+  res.json(updatedReqCert)
 }
 
 export const deleteReqCertificate = async (req, res) => {

@@ -2,11 +2,11 @@ import mongoose from 'mongoose'
 
 const reqCertSchema = mongoose.Schema({
   controlNo: Number,
-  type: String,
   name: String,
   address: String,
-  purpose: String,
   sex: String,
+  type: String,
+  purpose: String,
   date: String,
 })
 

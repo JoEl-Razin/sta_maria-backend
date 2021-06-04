@@ -17,7 +17,7 @@ import reqCertificate from './routes/requested-certificate.js'
 
 // const CONNECTION_URL = `mongodb+srv://elrazinmjo:elrazinmjo@cluster0.ihq4j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 // const CONNECTION_URL = `mongodb://localhost/stamaria`;
-const CONNECTION_URL = `mongodb://localhost/stamaria`;
+const CONNECTION_URL = 'mongodb://stamaria_default:zambozambo1635@localhost/stamaria';
 
 let server;
 
