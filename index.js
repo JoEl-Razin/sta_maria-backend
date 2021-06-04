@@ -11,10 +11,13 @@ import business from './routes/business.js'
 import certificate from './routes/certificate.js'
 import login from './routes/login.js'
 import about from './routes/home-about.js'
+import announcement from './routes/home-announcement.js'
+import reqCertificate from './routes/requested-certificate.js'
+
 
 // const CONNECTION_URL = `mongodb+srv://elrazinmjo:elrazinmjo@cluster0.ihq4j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 // const CONNECTION_URL = `mongodb://localhost/stamaria`;
-const CONNECTION_URL = `mongodb://${process.env.db_user}:${process.env.db_pwd}@localhost/stamaria`;
+const CONNECTION_URL = `mongodb://localhost/stamaria`;
 
 let server;
 
@@ -36,6 +39,9 @@ export async function start(port) {
   app.use('/certificate', certificate)
   app.use('/login', login)
   app.use('/home-about', about)
+  app.use('/home-announcement', announcement)
+  app.use('/req-cert', reqCertificate)
+
 
   await mongoose.start(CONNECTION_URL);
 

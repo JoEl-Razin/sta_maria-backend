@@ -48,7 +48,8 @@ export const updateHousehold = async (req, res) => {
     streetName, 
     householdType, 
     householdHead, 
-    householdMembers 
+    householdMembers,
+    id,
   } = req.body
 
   if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No post with that id: ${id}`)

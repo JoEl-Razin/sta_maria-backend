@@ -83,6 +83,7 @@ export const updateResident = async (req, res) => {
     nationality, 
     residentType, 
     blacklist,
+    id,
   } = req.body
 
   if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No post with that id: ${id}`)

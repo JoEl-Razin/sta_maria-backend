@@ -1,17 +1,17 @@
 import express from 'express'
 
 import { 
-  get,
-  createAbout,
-  updateAbout,
-  deleteAbout,
-} from '../controllers/home-about.js'
+  getAnnouncement,
+  createAnnouncement,
+  updateAnnouncement,
+  deleteAnnouncement,
+} from '../controllers/home-announcement.js'
 
 const router = express.Router()
 
-router.get('/', getAbout)
-router.post('/', createAbout)
-router.patch(':id', updateAbout)
-router.delete('/:id', deleteAbout)
+router.get('/', getAnnouncement)
+router.post('/', createAnnouncement)
+router.patch(':id', updateAnnouncement)
+router.delete('/:id', deleteAnnouncement)
 
 export default router
